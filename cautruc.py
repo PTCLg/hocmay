@@ -1,3 +1,5 @@
+# cautruc.py
+
 import os
 
 def print_directory_structure(root_dir, indent=''):
