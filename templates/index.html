@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân loại giày dép</title>
+</head>
+<body>
+    <h1>Phân loại giày dép</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Upload">
+    </form>
+    {% if filename %}
+        <h2>Hình ảnh:</h2>
+        <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image" style="max-width: 500px;">
+        <h2>Kết quả phân loại:</h2>
+        <p><strong>Mô hình SVM:</strong> {{ svm_label }}</p>
+        <p><strong>Mô hình MLP:</strong> {{ mlp_label }}</p>
+    {% endif %}
+</body>
+</html>
