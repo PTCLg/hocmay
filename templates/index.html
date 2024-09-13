@@ -13,7 +13,7 @@
     </form>
     {% if filename %}
         <h2>Hình ảnh:</h2>
-        <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image" style="max-width: 500px;">
+        <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Uploaded Image" style="max-width: 500px;">
         <h2>Kết quả phân loại:</h2>
         <p><strong>Mô hình SVM:</strong> {{ svm_label }}</p>
         <p><strong>Mô hình MLP:</strong> {{ mlp_label }}</p>
