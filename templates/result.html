@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả phân loại</title>
+</head>
+<body>
+    <h1>Kết quả phân loại ảnh</h1>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" width="300">
+
+    <p>Kết quả SVM: {{ svm_label }}</p>
+    <p>Kết quả MLP: {{ mlp_label }}</p>
+    
+    <form action="{{ url_for('feedback') }}" method="POST">
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <label for="true_label">Nhãn chính xác:</label>
+        <select name="true_label">
+            <option value="boots">Boots</option>
+            <option value="dressShoes">Dress Shoes</option>
+            <option value="sandals">Sandals</option>
+            <option value="sneakers">Sneakers</option>
+        </select>
+
+        <p>Kết quả có đúng không?</p>
+        <button type="submit" name="correct" value="True">Đúng</button>
+        <button type="submit" name="correct" value="False">Sai</button>
+    </form>
+</body>
+</html>
