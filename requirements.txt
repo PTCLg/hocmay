@@ -1,7 +1,7 @@
 numpy==1.23.5
 pandas==1.5.3
-flask==2.2.5
-werkzeug==2.2.5
+flask==2.2.3
+werkzeug==2.2.3
 joblib==1.2.0
 pillow==9.5.0
 scikit-learn==1.2.2
