@@ -2,9 +2,9 @@
 
 import subprocess
 
-# Cài đặt các thư viện từ requirements.txt
-print("Installing dependencies from requirements.txt...")
-subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
+# # Cài đặt các thư viện từ requirements.txt
+# print("Installing dependencies from requirements.txt...")
+# subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
 
 # Chạy create_dataset.py
 print("Running create_dataset.py...")
