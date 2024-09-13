@@ -1,19 +1,15 @@
-# run_all.py
+import sys
 
-import subprocess
+REQUIRED_PYTHON_VERSION = (3, 8)
+current_version = sys.version_info
 
-# # Cài đặt các thư viện từ requirements.txt
-# print("Installing dependencies from requirements.txt...")
-# subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
+def check_python_version():
+    if current_version >= REQUIRED_PYTHON_VERSION:
+        print(f"Python version is {current_version.major}.{current_version.minor} or greater.")
+        print("Python version is compatible.")
+    else:
+        print(f"Python version is {current_version.major}.{current_version.minor}.")
+        print("Error: Python version is not compatible. Please upgrade to Python 3.8 or higher.")
 
-# Chạy create_dataset.py
-print("Running create_dataset.py...")
-subprocess.run(["python", "create_dataset.py"], check=True)
-
-# Chạy train_model.py
-print("Running train_model.py...")
-subprocess.run(["python", "train_model.py"], check=True)
-
-# Chạy app.py
-print("Running app.py...")
-subprocess.run(["python", "app.py"], check=True)
+if __name__ == "__main__":
+    check_python_version()
